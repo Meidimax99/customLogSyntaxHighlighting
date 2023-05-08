@@ -1,0 +1,115 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "log",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#string"
+		},
+		{
+			"include": "#timestamp"
+		},
+		{
+			"include": "#file"
+		},
+		{
+			"include": "#function"
+		},
+		{
+			"include": "#line"
+		},
+		{
+			"include": "#message"
+		}
+	],
+	"repository": {
+		"strings": {
+			"name": "string.log",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "string.log",
+					"match": "."
+				}
+			]
+		},
+		"string": {
+			"name": "string.log",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "string.log",
+					"match": "."
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "entity.name.function.trace.keyword.log",
+				"match": "\\bTrace\\b"
+			},
+			{
+				"name": "variable.debug.keyword.log",
+				"match": "\\bDebug\\b"
+			},
+			{
+				"name": "info.keyword.log",
+				"match": "\\bInfo\\b"
+			},
+			{
+				"name": "entity.name.namespace.keyword.log",
+				"match": "\\bNotice\\b"
+			},
+			{
+				"name": "punctuation.brackets.warn.keyword.log",
+				"match": "\\bWarn\\b"
+			},
+			{
+				"name": "string.error.keyword.log",
+				"match": "\\bError\\b"
+			},
+			{
+				"name": "string.fatal.keyword.log",
+				"match": "\\bFatal\\b"
+			}]
+		},
+		"timestamp": {
+			"patterns": [{
+				"name": "comment.log",
+				"match": "\\d{4}(-\\d{2}){3}(:\\d{2}){2}.\\d{1,3}"
+			}]
+		},
+		"file": {
+			"patterns": [{
+				"name": "keyword.file.log",
+				"match": "\\w+\\.\\w+(?=:)"
+			}]
+		},
+		"function": {
+			"patterns": [{
+				"name": "entity.name.type.function.log",
+				"match": "(?<=:)\\w*(?=:)"
+			}]
+		},
+		"line": {
+			"patterns": [{
+				"name": "constant.numeric.log",
+				"match": "(?<=:)\\d+"
+			}]
+		},
+		"message": {
+			"patterns": [{
+				"name": "constant.numeric.log",
+				"match": "\\d{4}(-\\d{2}){3}(:\\d{2}){2}.\\d{1,3}"
+			}]
+		}
+	},
+	"scopeName": "source.log"
+}

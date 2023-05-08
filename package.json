@@ -1,0 +1,19 @@
+{
+  "name": "log",
+  "displayName": "LogFileSyntaxHighlight",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "grammars": [{
+      "language": "log",
+      "scopeName": "source.log",
+      "path": "./syntaxes/log.tmLanguage.json"
+    }]
+  }
+}
